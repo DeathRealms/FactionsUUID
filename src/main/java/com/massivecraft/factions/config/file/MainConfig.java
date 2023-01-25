@@ -1478,6 +1478,18 @@ public class MainConfig {
                 }
             };
 
+            @Comment("Add the prefix of the mod you want to block interactions with in faction claims.\n" +
+                    "Do '/f debug blocknames' in-game and right click a block to see what needs to be added here.")
+            private Set<String> modPrefixes = new HashSet<String>() {
+                {
+                    this.add("APPLIEDENERGISTICS2");
+                    this.add("ENDERIO");
+                    this.add("FISKHEROES");
+                    this.add("CFM");
+                    this.add("CHISEL");
+                }
+            };
+
             @Comment("Add material names here that you wish to see treated as containers for interaction.")
             private Set<String> customContainers = new HashSet<>();
             @WipeOnReload
@@ -1730,6 +1742,10 @@ public class MainConfig {
 
             public Set<String> getWorldsNoWildernessProtection() {
                 return worldsNoWildernessProtection == null ? Collections.emptySet() : Collections.unmodifiableSet(worldsNoWildernessProtection);
+            }
+
+            public Set<String> getModPrefixes() {
+                return modPrefixes;
             }
 
             public Set<Material> getCustomContainers() {

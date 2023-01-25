@@ -85,6 +85,7 @@ public abstract class MemoryFPlayer implements FPlayer {
     protected int mapHeight = 8; // default to old value
     protected boolean isFlying = false;
     protected boolean isAutoFlying = false;
+    protected boolean isDebugBlockNames = false;
     protected boolean flyTrailsState = false;
     protected String flyTrailsEffect = null;
 
@@ -1229,6 +1230,14 @@ public abstract class MemoryFPlayer implements FPlayer {
 
     public void setTakeFallDamage(boolean fallDamage) {
         this.shouldTakeFallDamage = fallDamage;
+    }
+
+    public boolean isDebugBlockNames() {
+        return this.isDebugBlockNames;
+    }
+
+    public void setDebugBlockNames(boolean debugBlockNames) {
+        this.isDebugBlockNames = debugBlockNames;
     }
 
     public boolean isSeeingChunk() {

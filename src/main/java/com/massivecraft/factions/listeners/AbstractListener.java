@@ -293,6 +293,11 @@ public abstract class AbstractListener implements Listener {
                 if (material.name().contains("FURNACE")) {
                     action = PermissibleActions.CONTAINER;
                 }
+                for (String modPrefix : FactionsPlugin.getInstance().conf().factions().protection().getModPrefixes()) {
+                    if (!material.name().startsWith(modPrefix)) continue;
+                    action = PermissibleActions.CONTAINER;
+                    break;
+                }
                 if (FactionsPlugin.getInstance().conf().factions().protection().getCustomContainers().contains(material)) {
                     action = PermissibleActions.CONTAINER;
                 }

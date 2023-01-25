@@ -271,6 +271,10 @@ public interface FPlayer extends EconomyParticipator, Selectable {
 
     boolean canFlyAtLocation(FLocation location);
 
+    boolean isDebugBlockNames();
+
+    void setDebugBlockNames(boolean debugBlockNames);
+
     @SuppressWarnings("SameReturnValue")
     @Deprecated
     default boolean canFlyInFactionTerritory(Faction faction) {

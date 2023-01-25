@@ -55,6 +55,7 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
     public final CmdClaim cmdClaim = new CmdClaim();
     public final CmdCoords cmdCoords = new CmdCoords();
     public final CmdCreate cmdCreate = new CmdCreate();
+    public final CmdDebug cmdDebug = new CmdDebug();
     public final CmdDeinvite cmdDeinvite = new CmdDeinvite();
     public final CmdDescription cmdDescription = new CmdDescription();
     public final CmdDisband cmdDisband = new CmdDisband();
@@ -156,6 +157,7 @@ public class FCmdRoot extends FCommand implements CommandExecutor {
         this.addSubCommand(this.cmdClaim);
         this.addSubCommand(this.cmdCoords);
         this.addSubCommand(this.cmdCreate);
+        this.addSubCommand(this.cmdDebug);
         this.addSubCommand(this.cmdDeinvite);
         this.addSubCommand(this.cmdDescription);
         this.addSubCommand(this.cmdDisband);

@@ -114,7 +114,8 @@ public enum Permission {
     NEAR("near"),
     WARP("warp"),
     UPDATES("updates"),
-    DEBUG("debug");
+    DEBUG("debug"),
+    DEBUG_BLOCKNAMES("debug.blocknames");
 
     public final String node;
 

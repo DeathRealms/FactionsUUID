@@ -23,6 +23,8 @@ import com.massivecraft.factions.struct.Permission;
 import com.massivecraft.factions.util.TL;
 import com.massivecraft.factions.util.TextUtil;
 import com.massivecraft.factions.util.VisualizeUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -404,9 +406,30 @@ public class FactionsPlayerListener extends AbstractListener {
 
         Block block = event.getClickedBlock();
         Player player = event.getPlayer();
+        FPlayer fPlayer = FPlayers.getInstance().getByPlayer(player);
 
         if (block == null) {
             return;  // clicked in air, apparently
+        }
+
+        if (fPlayer.isDebugBlockNames() && player.hasPermission("factions.debug.blocknames")) {
+            String name = block.getType().name();
+            String blockName = "&eBlock Name: &a" + name;
+
+            Bukkit.getLogger().info("");
+            Bukkit.getLogger().info(ChatColor.translateAlternateColorCodes('&', blockName));
+
+            player.sendMessage("");
+            fPlayer.msg(blockName);
+
+            if (name.split("_").length > 1) {
+                String prefix = "&ePrefix: &a" + name.split("_")[0];
+                Bukkit.getLogger().info(prefix);
+                fPlayer.msg(prefix);
+            }
+
+            Bukkit.getLogger().info("");
+            player.sendMessage("");
         }
 
         if (Graves.allowAnyway(block)) {

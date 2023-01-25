@@ -171,6 +171,10 @@ public enum TL {
     COMMAND_CREATE_CREATEDLOG(" created a new faction: "),
     COMMAND_CREATE_DESCRIPTION("Create a new faction"),
 
+    COMMAND_DEBUG_BLOCKNAMES_ENABLED("&aEnabled &edebugging block names."),
+    COMMAND_DEBUG_BLOCKNAMES_DISABLED("&cDisabled &edebugging block names."),
+    COMMAND_DEBUG_BLOCKNAMES_DESCRIPTION("Toggles debugging block names"),
+
     COMMAND_DEINVITE_CANDEINVITE("Players you can deinvite: "),
     COMMAND_DEINVITE_CLICKTODEINVITE("Click to revoke invite for %1$s"),
     COMMAND_DEINVITE_ALREADYMEMBER("%1$s&e is already a member of %2$s"),
